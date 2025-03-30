@@ -57,7 +57,7 @@ Inspired by [Pix2Pix paper (Isola et al.)](https://arxiv.org/pdf/1611.07004), we
 
 📎 **Notebooks:**
 - [🔗 Training Notebook (cGAN)](https://nbviewer.org/github/ronelis199/-Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method2_train_env.ipynb)
-- [🔗 Testing Notebook (cGAN)](https://nbviewer.org/github/ronelis199/Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method2_test_env.ipynb)
+- [🔗 Testing Notebook (cGAN)](https://nbviewer.org/github/ronelis199/-Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method2_test_env.ipynb)
 
 **Best Result (Overall):**  
 The **second cGAN model (with MAE+CCE loss)** outperformed all others in visual quality and MSE.
