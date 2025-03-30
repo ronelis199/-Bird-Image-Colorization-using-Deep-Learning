@@ -1,51 +1,103 @@
-# **Advanced topics in Deep Learning Final Project**
+## 📘 Advanced Topics in Deep Learning – Final Project
 
-By:\
-**Raz Diamond (322281528)**, **Ron Elyashar (209350644)**,\
-**Liav Ermias (211684956)** and **Roeeii Itshayek (212210751)**.
+By:  
+Raz Diamond (322281528), Ron Elyashar (209350644),  
+Liav Ermias (211684956), Roeeii Itshayek (212210751)  
+Course: Basics of Deep Learning, Colman, 2025
 
-In this project, we were tasked with solving a **coloring** problem using methods we have learned over the semester. The
-goal is to build a model capable of coloring images from
-Kaggle's [20_UK_Garden_Birds](https://www.kaggle.com/datasets/davemahony/20-uk-garden-birds) dataset, which contains
-**2,841 images** labeled across **20 classes**.
+---
 
-The assignment consists of two parts:
+## 🎯 Project Goal
 
-### **Pt. 1: Naive Image-to-Image Translation Deep Neural Network**
+The task was to solve an **image colorization problem** using deep learning methods taught during the semester.  
+We aimed to develop a model that can automatically colorize grayscale bird images from the [20_UK_Garden_Birds](https://www.kaggle.com/datasets/gpiosenka/20-bird-species) dataset.
 
-Three **naive DNN experiments** to solve the **coloring** problem.\
-[🔗 Training Notebook (Part 1)](https://colab.research.google.com/drive/1tsFcOgRydmz39jILi01OOOYc0dqK1gfw?usp=sharing)\
-[🔗 Testing Notebook (Part 1)](https://colab.research.google.com/drive/1uo53rHGtg1xbefcv1gLsO-dWiTX90TBj?usp=sharing)
+The dataset contains 2,841 images across 20 bird species. Each image was converted to grayscale (1 channel) as input and matched with its RGB version (3 channels) as the output.
 
-### **Pt. 2: Image-to-Image Translation with Conditional Adversarial Networks**
+---
 
-Three **cGAN experiments** to solve the **coloring** problem. Inspired by a research paper from Berkeley.\
-[🔗 Training Notebook (Part 2)](https://colab.research.google.com/drive/1HUJUY9YvVQKETTJ15odrARgyacliYpfl?usp=sharing)\
-[🔗 Testing Notebook (Part 2)](https://colab.research.google.com/drive/1WfIW1RzE31Da0yKr0cYtFnKV_jaWskeV?usp=sharing)
+## 📁 Dataset & Preprocessing
 
-We used the Python programming language, along with TensorFlow, Numpy, and Scikit-Learn. The notebooks were presented
-using the Google Colab platform
+- Train/Validation/Test split: 70% / 10% / 20%
+- Images resized to 128×128
+- Data Augmentation: `RandomZoom`, `RandomRotation` from Keras
 
-## Structure of Colab Notebooks:
+---
 
-Each training notebook is divided into 4 sections:
+## 🧪 Project Structure
 
-- **Introduction** - Overview, imports, and dataset downloading.
-- **Preprocessing** - Processing and preparing the dataset.
-- **Experiments** - The three experiments we implemented.
-- **Conclusions** - Key notes from this part.
+The project was divided into two main parts:
 
-Each testing notebook is a test environment, allowing users to upload an image and test it against our best model.
+---
 
-## Testing Our Implementation
+### 🧠 Part 1: Naive Deep Neural Networks
 
-To test our implementation of the assignments in each part:
+We explored **three different architectures** for direct grayscale-to-color translation:
 
-1. Check the training notebook and the output of the cells.
-2. Run the cells in the test notebook to try the best model by yourself.
+1. **Fully Connected Neural Network (FCNN)** – served as a baseline  
+2. **Convolutional Neural Network (CNN)** – better spatial feature extraction  
+3. **U-Net** – encoder-decoder with skip connections for superior performance
 
-### **Disclaimer**
+📎 **Notebooks:**
+- [🔗 Training Notebook (Naive)](https://nbviewer.org/github/ronelis199/Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method1_train_env.ipynb)
+- [🔗 Testing Notebook (Naive)](https://nbviewer.org/github/ronelis199/Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method1_test_env.ipynb)
 
-Any files saved in the notebook's virtual machine (VM) will be deleted after the session ends.
-To ensure persistence, we saved this file ("README.md") and the models (.keras files) in our Google Drive accounts.
-These files are shared with anyone who has the links, allowing them to access and use them when running our notebooks.
+**Best Result (Naive):**  
+The U-Net model showed the best results among the naive methods.
+
+---
+
+### ⚡ Part 2: Conditional GAN (cGAN)
+
+Inspired by [Pix2Pix paper (Isola et al.)](https://arxiv.org/pdf/1611.07004), we implemented three cGAN variations:
+
+1. **Basic cGAN** – simple CNN generator & discriminator  
+2. **cGAN with MAE & CCE loss** – improved generation quality  
+3. **U-Net Generator + PatchGAN Discriminator** – state-of-the-art approach
+
+📎 **Notebooks:**
+- [🔗 Training Notebook (cGAN)](https://nbviewer.org/github/ronelis199/Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method2_train_env.ipynb)
+- [🔗 Testing Notebook (cGAN)](https://nbviewer.org/github/ronelis199/Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method2_test_env.ipynb)
+
+**Best Result (Overall):**  
+The **second cGAN model (with MAE+CCE loss)** outperformed all others in visual quality and MSE.
+
+---
+
+## 🧪 How to Run the Project
+
+To test the models yourself:
+
+1. Open the relevant **training notebook** and explore the experiments
+2. Open the **testing notebook**, upload a grayscale image, and see the colored output from our best model
+
+---
+
+## 🛠 Technologies Used
+
+- Python
+- TensorFlow / Keras
+- NumPy
+- Scikit-learn
+- Google Colab
+
+---
+
+## 📂 File Structure
+
+```
+Bird-Image-Colorization/
+│
+├── final_project_atdl_method1_train_env.ipynb      # Part 1 - Naive Training
+├── final_project_atdl_method1_test_env.ipynb       # Part 1 - Naive Testing
+├── final_project_atdl_method2_train_env.ipynb      # Part 2 - cGAN Training
+├── final_project_atdl_method2_test_env.ipynb       # Part 2 - cGAN Testing
+└── README.md
+```
+
+---
+
+## 🚨 Disclaimer
+
+> Files saved in the Colab virtual machine are deleted after the session ends.  
+> Our models (`.keras` files) and notebooks are shared via GitHub and Google Drive for persistence.
