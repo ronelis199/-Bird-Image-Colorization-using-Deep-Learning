@@ -39,7 +39,7 @@ We explored **three different architectures** for direct grayscale-to-color tran
 3. **U-Net** – encoder-decoder with skip connections for superior performance
 
 📎 **Notebooks:**
-- [🔗 Training Notebook (Naive)](https://nbviewer.org/github/ronelis199/Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method1_train_env.ipynb)
+- [🔗 Training Notebook (Naive)](https://nbviewer.org/github/ronelis199/-Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method1_train_env.ipynb)
 - [🔗 Testing Notebook (Naive)](https://nbviewer.org/github/ronelis199/Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method1_test_env.ipynb)
 
 **Best Result (Naive):**  
@@ -56,7 +56,7 @@ Inspired by [Pix2Pix paper (Isola et al.)](https://arxiv.org/pdf/1611.07004), we
 3. **U-Net Generator + PatchGAN Discriminator** – state-of-the-art approach
 
 📎 **Notebooks:**
-- [🔗 Training Notebook (cGAN)](https://nbviewer.org/github/ronelis199/-Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method1_train_env.ipynb)
+- [🔗 Training Notebook (cGAN)](https://nbviewer.org/github/ronelis199/-Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method2_train_env.ipynb)
 - [🔗 Testing Notebook (cGAN)](https://nbviewer.org/github/ronelis199/Bird-Image-Colorization-using-Deep-Learning/blob/main/final_project_atdl_method2_test_env.ipynb)
 
 **Best Result (Overall):**  
